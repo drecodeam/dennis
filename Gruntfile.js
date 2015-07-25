@@ -95,8 +95,7 @@ module.exports = function (grunt) {
     // SASS compiling
     sass: {
       options: {
-        sourceMap: 'inline',
-        style: 'compressed'
+        sourceMap: true
       },
       dist: {
         files: {
@@ -107,14 +106,14 @@ module.exports = function (grunt) {
     // Purify CSS
     purifycss: {
       options: {
-        minify: false,
+        minify: true,
         info: true,
         rejected: true
       },
       target: {
         src: ['<%= paths.buildBase %>/**/*.html', '<%= paths.buildAssets %>/**/*.js'],
         css: ['<%= paths.buildAssets %>/css/**/main.css'],
-        dest: '<%= paths.buildAssets %>/css/trimmed.css'
+        dest: '<%= paths.buildAssets %>/css/dennis.css'
       },
     },
     // CSS minification
@@ -129,7 +128,7 @@ module.exports = function (grunt) {
         ]
       },
       dist: {
-        src: '<%= paths.buildAssets %>/css/trimmed.css'
+        src: '<%= paths.buildAssets %>/css/main.css'
       }
     },
     // The ever epic watch statement
@@ -248,6 +247,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['assemble', 'sass', 'connect' ]);
 
   // Build task
-  grunt.registerTask('build', ['assemble', 'sass', 'purifycss', 'postcss', 'gh-pages' ]);
+  grunt.registerTask('build', ['assemble', 'sass', 'postcss', 'purifycss', 'gh-pages' ]);
 
 };

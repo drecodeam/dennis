@@ -1,0 +1,20 @@
+/* ==========================================================================
+   CSS STYLES FOR LANDING PAGE
+   ========================================================================== */
+.landing-page {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 10%;
+  h1 {
+    font-family: $title-font;
+    font-size: scale( 10 );
+    color: $yellow;
+    color: $cherry;
+    margin: 0.2em 0;
+  }
+  h3 {
+    margin: 0.5em 0;
+    color: $black;
+    font-weight: 100;
+  }
+}

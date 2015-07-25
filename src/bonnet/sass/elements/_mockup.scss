@@ -1,0 +1,233 @@
+.mockup-image-item {
+    position: relative;
+    overflow: hidden;
+    margin: 50px auto;
+    width: 80%;
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        max-width: 70%;
+        padding: 10px 40px;
+        float: right;
+        text-align: right;
+        img {
+            box-shadow : 0px 0px 10px 3px lighten( #3c3c3c, 70% );
+            max-width: 100%;
+            border: 1px solid #f1f1f1;
+            border-bottom: none;
+            display: inline;
+        }
+    }
+    .image-label {
+        @extend %type-xs;
+        text-transform: italic;
+        width: 30%;
+        float: left;
+        padding: 5em 2%;
+        position: relative;
+        overflow: hidden;
+        font-family: $type-sans-serif;
+        .image-label-marker {
+            position: relative;
+            overflow: hidden;
+            width: 30%;
+            height: 0.5em;
+            background: #3c3c3c;
+            margin: 10px 0;
+        }
+    }
+}
+
+
+.mockup-slider {
+    position: relative;
+    overflow: hidden;
+    height: 90vh;
+    .mockup-image-item {
+        position: relative;
+        margin: 0px;
+        overflow: hidden;
+        float: left;
+        max-height: 80%;
+        height: auto;
+        width: auto;
+        max-width: 70%;
+        height: auto;
+        // transition: 1s all ease-in-out;
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            float: none;
+            padding: 30px 10px 10px 10px;
+            height: 700px;
+            max-width: 100%;
+            // transition: 0.9s all ease-in-out;
+            max-height: 100%;
+            img {
+                max-width: 100%;
+                box-shadow: none;
+                max-height: 100%;
+                display: inline;
+                position: relative;
+            }
+        }
+        .image-label {
+            @extend %type-xs;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+            display: none;
+        }
+        &.active {
+            max-height: 100%;
+            .image-container {
+                padding: 30px 10px 10px 10px;
+                margin: 0;
+                img {
+                    box-shadow : 0px 0px 10px 3px lighten( #3c3c3c, 70% );
+                }
+            }
+            .image-label {
+                display: block;
+            }
+        }
+    }
+}
+
+.mockup-image-item-layer {
+    position: relative;
+    overflow: hidden;
+    margin: 50px auto;
+    padding: 5% 0;
+    width: 90%;
+    min-height: 90vh;
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        max-width: 70%;
+        padding: 0;
+        float: right;
+        .layer-back {
+            transition: 0.5s all ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0.2;
+            cursor: zoom-in;
+            &:hover {
+                opacity: 1;
+                z-index: 3;
+            }
+        }
+        .layer-front {
+            position: relative;
+            margin-top: 10%;
+            margin-left: 10%;
+            z-index: 2;
+            opacity: 1;
+        }
+        img {
+            box-shadow : 0px 0px 10px 3px lighten( #3c3c3c, 70% );
+            max-width: 80%;
+            max-height: 80%;
+            border: 1px solid #f1f1f1;
+            border-bottom: none;
+        }
+    }
+    .image-label {
+        @extend %type-xs;
+        text-transform: italic;
+        width: 30%;
+        float: left;
+        padding: 5em 2%;
+        position: relative;
+        overflow: hidden;
+        font-family: $type-sans-serif;
+        .image-label-marker {
+            position: relative;
+            overflow: hidden;
+            width: 30%;
+            height: 0.5em;
+            background: #3c3c3c;
+            margin: 10px 0;
+        }
+    }
+
+    &.pull-left {
+        .image-container {
+            float: left;
+        }
+        .image-label {
+            float: right;
+        }
+    }
+
+}
+
+.mockup-image-item-card-layer {
+    position: relative;
+    overflow: hidden;
+    margin: 50px auto;
+    width: 100%;
+    min-height: 80vh;
+    max-height: 100vh;
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 100%;
+        padding: 0;
+        .layer-front {
+            position: relative;
+            margin-right: 10%;
+            float: right;
+            // max-width: 30%;
+            z-index: 5;
+            opacity: 1;
+            box-shadow: none;
+        }
+        img {
+            // max-width: 40%;
+            max-height: 80vh;
+            border-bottom: none;
+            box-shadow: 0px 1px 20px rgba( 0,0,0,0.5 );
+            display: block;
+            position: relative;
+            &:nth-child( 2 ) {
+                position: absolute;
+                bottom: -10%;
+                right: 25%;
+                z-index: 4;
+            }
+            &:nth-child( 3 ) {
+                position: absolute;
+                bottom: -20%;
+                right: 40%;
+                z-index: 3;
+            }
+
+        }
+    }
+    .image-label {
+        @extend %type-xs;
+        text-transform: italic;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        font-family: $type-sans-serif;
+        text-align: center;
+    }
+
+    &.pull-left {
+        .image-container {
+            float: left;
+        }
+        .image-label {
+            float: right;
+        }
+    }
+
+}

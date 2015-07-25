@@ -1,0 +1,28 @@
+---
+title: index page
+writings: page
+layout : page.hbs
+showNav: true
+---
+
+<div class="blog-container">
+
+    <h1 class="page-title">
+        <a href="/">drecodeam/ </a><span>writing</span>
+    </h1>
+
+    <div class="post-list">
+          {{#each writings}}
+            {{#is writing "blog"}}
+                {{#withSort pages "data.posted" dir="desc"}}
+                    <li class="post-list-item">
+                        <a class="list-item-title" href="/{{relativeLink}}">{{ this.data.title }}</a>
+                        <div class="list-item-date">
+                            {{this.data.date}}
+                        </div>
+                    </li>
+                {{/withSort}}
+            {{/is}}
+          {{/each}}
+    </div>
+

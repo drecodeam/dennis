@@ -1,0 +1,57 @@
+.colors-container {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    clear: both;
+    padding: 40px 0;
+    .colors-container-item {
+        position: relative;
+        float: left;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0 10px;
+        &:nth-child(1) {
+            background : #EC3549;
+        }
+        &:nth-child(2) {
+            background : #484E60;
+        }
+        &:nth-child(3) {
+            background : #3c3c3c;
+        }
+        &:nth-child(4) {
+            background : #f1f1f1;
+        }
+        &:nth-child(5) {
+            background : #778898;
+        }
+    }
+}
+
+.type-container {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0;
+    float: left;
+    clear: both;
+    .type-specimen {
+        position: relative;
+        overflow: hidden;
+        position: relative;
+        line-height: 1.5em;
+    }
+}
+
+.case-title {
+    position: relative;
+    overflow: hidden;
+    .case-name {
+        margin-bottom: 0;
+    }
+    .case-subtitle {
+        @extend %type-s;
+        opacity: 0.2;
+        margin-top: 0;
+    }
+}

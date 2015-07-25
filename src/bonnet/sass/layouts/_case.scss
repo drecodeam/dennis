@@ -1,0 +1,26 @@
+.case-content {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    // font-family: $type-sans-serif;
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    ol,
+    article {
+        max-width: 800px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .case-body {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+    }
+}

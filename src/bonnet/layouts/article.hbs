@@ -1,0 +1,19 @@
+---
+showNav: true
+---
+
+
+    {{!-- INCLUDE SITE HEADER --}}
+    {{>site-header}}
+    <div class="article-content">
+        {{!-- INCLUDE PAGE TITLE --}}
+        <h2 class="article-title">{{ this.page.title }}</h2>
+        {{!-- INCLUDE THE CONTENT IN MARKDOWN --}}
+        <div class="article-body">
+            {{#markdown}}
+                {{> body}}
+            {{/markdown}}
+        </div>
+        {{!-- INCLUDE SITE FOOTER --}}
+        {{>site-footer}}
+    </div>

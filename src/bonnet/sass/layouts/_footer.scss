@@ -1,0 +1,17 @@
+.footer-container {
+  position: relative;
+  overflow: hidden;
+  font-family: $type-sans-serif;
+  @extend %type-xs;
+  padding: 20% 0;
+  color: lighten( #3c3c3c, 40% );
+
+  a {
+    color: inherit;
+    border: none;
+  }
+
+  .footer-colophon {
+    letter-spacing: 1px;
+  }
+}

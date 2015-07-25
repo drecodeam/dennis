@@ -1,0 +1,25 @@
+.blog-container {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 5%;
+    .post-list {
+        position: relative;
+        overflow: hidden;
+        list-style: none;
+        padding: 50px 2%;
+        font-family: $type-sans-serif;
+        .post-list-item {
+            position: relative;
+            overflow: hidden;
+            margin: 1em 0;
+            .list-item-title {
+                text-decoration: none;
+                border: none;
+            }
+            .list-item-date {
+                opacity: 0.5;
+                @extend %type-s;
+            }
+        }
+    }
+}

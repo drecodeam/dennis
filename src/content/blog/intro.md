@@ -1,3 +1,24 @@
+---
+title: Introduction to dennis
+writings: blog
+layout : article.hbs
+showNav: true
+---
+
+### INTRODUCTION
+Dennis is still in very alpha stage and is being actively developed right now.
+
+### GETTING STARTED
+Dennis is based on Assemble Grunt plugin, so basically all the magic happens in the grunt file.
+Like all Grunt projects, all you have to do to start working on is run npm install.
+
+```
+npm install
+```
+
+**Understanding the Grunt structure**
+
+```js
 module.exports = function (grunt) {
   'use strict';
 
@@ -251,3 +272,4 @@ module.exports = function (grunt) {
   grunt.registerTask('build', ['assemble', 'sass', 'purifycss', 'postcss', 'gh-pages' ]);
 
 };
+```

@@ -1,10 +1,9 @@
 // Add all the vendor imports here
 @import 'vendor/normalize';
-@import 'vendor/harmon';
-@import 'vendor/userscape';
-@import 'vendor/code';
-@import 'vendor/zoom';
-@import 'vendor/ionicons';
+@import 'vendor/harmon'; // SASS plugin for modular scale
+@import 'vendor/userscape'; // Prettify theme
+@import 'vendor/code'; // Prettify SASS
+@import 'vendor/ionicons'; // Ionicons icons
 
 // Add all the base imports here
 @import 'base/type';
@@ -12,32 +11,12 @@
 @import 'base/colors';
 
 // Add all the element imports here
-@import 'elements/image';
-@import 'elements/mockup';
-@import 'elements/horizontal-viewer';
-@import 'elements/commons';
 
 // Add all the layout imports here
 @import 'layouts/header';
 @import 'layouts/article';
 @import 'layouts/footer';
-@import 'layouts/case';
 
 // Add all the page imports here
  @import 'pages/landing';
- @import 'pages/work';
  @import 'pages/blog-list';
- @import 'pages/project';
- @import 'pages/colophon';
- @import 'pages/fingo';
-
-
-.page-title {
-    a {
-        font-weight: 400;
-        border: none;
-    }
-    span {
-        color: #FFC535;
-    }
-}

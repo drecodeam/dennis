@@ -1,15 +1,15 @@
 {
-  "name": "assemble-blog-template",
+  "name": "dennis",
   "version": "0.0.1",
-  "description": "Assemble Blog Template for use alongside http://www.andismith.com/blog/2014/01/getting-started-with-assemble/",
+  "description": "kamehah theme for Assemble",
   "author": {
-    "name": "andismith",
-    "email": "andi.smith.uk@gmail.com",
-    "url": "http://www.andismith.com"
+    "name": "drecodeam",
+    "email": "drecodeam@gmail.com",
+    "url": "http://drecodeam.github.io"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andismith/assemble-blog-template.git"
+    "url": "https://github.com/drecodeam/dennis.git"
   },
   "dependencies": {},
   "devDependencies": {

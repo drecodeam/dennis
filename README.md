@@ -1,2 +1,2 @@
-# drecodeam.github.io
-Personal website
+# dennis
+A simple theme based on [Assemble](http://assemble.io/)

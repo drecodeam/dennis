@@ -1,4 +1,4 @@
-.blog-container {
+.list-container {
     position: relative;
     overflow: hidden;
     padding: 10px 5%;
@@ -6,19 +6,37 @@
         position: relative;
         overflow: hidden;
         list-style: none;
-        padding: 50px 2%;
+        padding: 0 5%;
         font-family: $type-sans-serif;
         .post-list-item {
             position: relative;
             overflow: hidden;
             margin: 1em 0;
+            .post-list-item-marker-outline,
+            .post-list-item-marker-filled {
+                @extend %type-xs;
+                display: inline;
+            }
+            .post-list-item-marker-filled {
+                display: none;
+            }
+            &:hover {
+                .post-list-item-marker-outline {
+                    display: none;
+                }
+                .post-list-item-marker-filled {
+                    display: inline-block;
+                }
+            }
             .list-item-title {
                 text-decoration: none;
                 border: none;
             }
             .list-item-date {
-                opacity: 0.5;
                 @extend %type-s;
+                opacity: 0.5;
+                text-transform: uppercase;
+                letter-spacing: 1px;
             }
         }
     }

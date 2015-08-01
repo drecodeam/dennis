@@ -1,0 +1,11 @@
+.page-title {
+    font-family: $type-title;
+    .page-title-home-link {
+        opacity: 0.2;
+        a {
+            text-decoration: none;
+            color: inherit;
+            border-bottom: none;
+        }
+    }
+}

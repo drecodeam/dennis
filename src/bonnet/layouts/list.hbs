@@ -1,0 +1,30 @@
+{{!-- INCLUDE SITE HEADER --}}
+{{>site-header}}
+
+{{this.collectionName}}
+{{collectionInflection}}
+{{listName}}
+
+<div class="list-container">
+    <h1 class="page-title">
+        <span class="page-title-home-link"><a href="/">{{config.websiteTitle}}/</a></span><span class="page-title-current-title">docs</span>
+    </h1>
+    <div class="post-list">
+          {{#each this.collectionName}}
+            {{this}}
+            {{#is this.collectionInflection listName}}
+                {{#withSort pages "data.posted" dir="desc"}}
+                    <li class="post-list-item">
+                        <a class="list-item-title" href="/{{relativeLink}}">{{ this.data.title }}</a>
+                        <div class="list-item-date">
+                            {{this.data.date}}
+                        </div>
+                    </li>
+                {{/withSort}}
+            {{/is}}
+          {{/each}}
+    </div>
+</div>
+
+{{!-- INCLUDE SITE FOOTER --}}
+{{>site-footer}}

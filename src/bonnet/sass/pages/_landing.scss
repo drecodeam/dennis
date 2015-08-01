@@ -5,6 +5,14 @@
   position: relative;
   overflow: hidden;
   padding: 30vh 10%;
+  .logo {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    img {
+      max-width: 100%;
+    }
+  }
 
   h1 {
     font-family: $type-sans-serif;

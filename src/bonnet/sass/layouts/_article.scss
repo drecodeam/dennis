@@ -18,11 +18,45 @@
         margin-left: auto;
         margin-right: auto;
     }
+    blockquote {
+        // padding: 10px;
+        width: 40%;
+        float: left;
+        font-weight: 400;
+        // opacity: 0.25;
+        color: lighten( #8D99AE, 10% );
+        p:first-letter {
+            font-size: 1rem;
+        }
+        &:nth:child( 2n ) {
+            float: left;
+        }
+        &:nth-child( 2n+1 ) {
+            float: right;
+        }
+    }
+    img {
+        position: relative;
+        overflow: hidden;
+        margin: 2em auto;
+        max-width: 100%;
+        display: block;
+    }
 }
 .article-title {
     margin: 0;
     font-weight: 700;
+    font-family: $type-title;
     color: #3c3c3c;
     border: none;
     padding: 0;
+    // width: 60%;
+    max-width: 800px;
+    padding-right: 10%;
+}
+.article-body {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }

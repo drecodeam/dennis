@@ -2,6 +2,8 @@
 - Fix SASS structure
 - Add proper documentation
 - Create example posts
+- Add moment.js for date parsing
+- add permalink support
 
 ## DO IT A BIT LATER THAN NOW
 - add disqus
@@ -10,6 +12,7 @@
 - add responsive navigation
 - description
 - 404 page
+- a listing layout where we can define the listing tag in the page's metadata
 
 ## DO IT SOMEDAY
 - add support for featured image
@@ -27,5 +30,3 @@
 - add support for picturefill
 - support for responsive images
 - add performance benchmarks
-
-

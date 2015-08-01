@@ -20,4 +20,11 @@ Like all Grunt projects, all you have to do to start working on is run npm insta
 
 ```npm install```
 
-**Understanding the Grunt structure**
+### Adding website settings
+All the website settings are saved in the ***src/bonnet/data/config.json*** file.
+
+```
+{
+    "websiteTitle" : "dennis"
+}
+```

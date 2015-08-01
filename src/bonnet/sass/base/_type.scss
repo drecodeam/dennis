@@ -64,6 +64,11 @@ body {
     line-height: scale( 3, unitless );
 }
 
+%type-xxs {
+    font-size: scale( -2 );
+    line-height: scale( 2, unitless );
+}
+
 %type-xl {
     font-size: scale( 6 );
     line-height: 1;

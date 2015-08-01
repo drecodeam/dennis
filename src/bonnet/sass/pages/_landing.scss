@@ -5,14 +5,32 @@
   position: relative;
   overflow: hidden;
   padding: 30vh 10%;
+
   h1 {
     font-family: $type-sans-serif;
-    margin: 0.2em 0;
+    margin: .2em 0;
     font-weight: 300;
   }
+
   h3 {
     margin: 0.5em 0;
     color: $black;
     font-weight: 100;
+  }
+
+  .landing-nav {
+    position: relative;
+    overflow: hidden;
+    clear: both;
+    margin: 10px 0;
+    .landing-nav-item {
+      color: $lighter-black;
+      font-family: $type-sans-serif;
+      display: inline-block;
+      padding: 0 1em 0 0;
+      @extend %type-s;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
   }
 }

@@ -3,6 +3,7 @@ title: Introduction to dennis
 writings: docs
 layout : article.hbs
 showNav: true
+date: Aug 1
 ---
 
 ### INTRODUCTION

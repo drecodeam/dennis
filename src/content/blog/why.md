@@ -3,6 +3,7 @@ title: The curious case of another theme
 writings: docs
 layout : article.hbs
 showNav: true
+date: 27th May
 ---
 
 While setting up my website, I played with a lot of static site generators( Jekyll, Hyde, etc ), out of which [Assemble](http://assemble.io/) really stood out for the following reasons :

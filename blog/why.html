@@ -1,0 +1,89 @@
+
+
+
+    
+    <!DOCTYPE html>
+<html>
+    <head>
+        <title>banannaaaa</title>
+        <meta name="signet:authors" content="Ankur Anand">
+        <meta name="signet:links" content="http://github.com/drecodeam, http://twitter.com/drecodeam, http://drecodeam.github.io">
+        <link rel="stylesheet" href="/assets/css/main.css" />
+    </head>
+
+    <body>
+        <header class="header">
+            
+            
+              <nav class="header-nav">
+              </nav>
+            
+        </header>
+
+
+    <div class="article-content">
+        
+        <h1 class="article-title">The curious case of another theme</h1>
+        
+        <div class="article-body">
+            <p>While setting up my website, I played with a lot of static site generators( Jekyll, Hyde, etc ), out of which <a href="http://assemble.io/">Assemble</a> really stood out for the following reasons :</p>
+<ul>
+<li>It&#39;s quite flexible. It really is.</li>
+<li>It&#39;s based on Grunt so it fits my existing workflow of the various plugins.</li>
+<li>Ability to use the templating language of one&#39;s own choice ( Handlebars in this case )</li>
+<li>Flexibility to interchangibly use markdown and handlebars.</li>
+</ul>
+<p>Let me walk you down as to the use cases which I felt, to make it more clear.</p>
+<h4 id="have-pages-with-custom-layout">Have pages with custom layout</h4>
+<p>So a blog might have one layout, while the blog listing may have another. Our projects might follow another layout, and then there are those special pages such as the landing page which are completely different from all the others.</p>
+<p>With Assemble, we can define multiple layouts and declare the layout to be used in the metadata.</p>
+<pre><code>&lt;!-- THIS PAGE USES ARTICLE LAYOUT AND FALLS UNDER THE COLLECTION OF BLOGPOSTS --&gt;
+---
+title: The curious case of another theme
+writings: blog
+layout : article.hbs
+showNav: true
+---</code></pre>
+<p>So all in all I ended up making the following layouts :</p>
+<ol>
+<li><strong>article.hbs</strong> - Layout for how the blogpost page would look like.</li>
+<li><strong>case.hbs</strong> - I write most of my projects as case studies, so I ended up writing a different layout for my case studies.</li>
+<li><strong>page.hbs</strong> - For all the static pages like landing, about, blog listing etc</li>
+</ol>
+<h4 id="data-is-also-flexible">DATA is also flexible</h4>
+<p>With the ability to use data from an external file or define in the metadata.</p>
+
+            
+                <div id="disqus_thread" class="disqus-container"></div>
+            
+        </div>
+    </div>
+
+    
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES * * */
+            var disqus_shortname = 'dennis-theme';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    
+
+    
+    <div class="footer-container">
+
+</div>
+
+
+<script src="//oss.maxcdn.com/signet/0.4.4/signet.min.js"></script>
+<script src="/assets/js/vendor.min.js"></script>
+<script src="/assets/js/source.min.js"></script>
+
+</body>
+</html>
+

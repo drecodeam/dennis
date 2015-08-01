@@ -8,7 +8,7 @@
         <title>banannaaaa</title>
         <meta name="signet:authors" content="Ankur Anand">
         <meta name="signet:links" content="http://github.com/drecodeam, http://twitter.com/drecodeam, http://drecodeam.github.io">
-        <link rel="stylesheet" href="./assets/css/dennis.css" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
     </head>
 
     <body>
@@ -16,283 +16,53 @@
             
             
               <nav class="header-nav">
-                  <li class="header-nav-item"><a href="/index.html">home</a></li>
-                  <li class="header-nav-item"><a href="/work.html">work</a></li>
-                  <li class="header-nav-item"><a href="/writing.html">writing</a></li>
-                  <li class="header-nav-item"><a href="/project.html">projects</a></li>
               </nav>
             
         </header>
 
+
     <div class="article-content">
         
-        <h2 class="article-title">Introduction to dennis</h2>
+        <h1 class="article-title">Introduction to dennis</h1>
         
         <div class="article-body">
             <h3 id="introduction">INTRODUCTION</h3>
 <p>Dennis is still in very alpha stage and is being actively developed right now.</p>
 <h3 id="getting-started">GETTING STARTED</h3>
-<p>Dennis is based on Assemble Grunt plugin, so basically all the magic happens in the grunt file.
-Like all Grunt projects, all you have to do to start working on is run npm install.</p>
-<pre><code>npm install</code></pre>
-<p><strong>Understanding the Grunt structure</strong></p>
-<pre><code class="language-js">module.exports = <span class="function"><span class="keyword">function</span> <span class="params">(grunt)</span> {</span>
-  <span class="string">'use strict'</span>;
+<p>Dennis is based on Assemble Grunt plugin, so basically all the magic happens in the grunt file.</p>
+<p>To start you need to <a href="https://github.com/drecodeam/dennis#fork-destination-box">Fork the repo</a> or you can clone it</p>
+<p><code>git clone git@github.com:drecodeam/dennis.git</code></p>
+<p>Like all Grunt projects, all you have to do to start working on is run npm install.</p>
+<p><code>npm install</code></p>
+<h3 id="adding-website-settings">Adding website settings</h3>
+<p>All the website settings are saved in the <strong><em>src/bonnet/data/config.json</em></strong> file.</p>
+<pre><code>{
+    &quot;websiteTitle&quot; : &quot;dennis&quot;
+}</code></pre>
 
-  <span class="keyword">var</span> paths = {
-    sourceBase   : <span class="string">'src'</span>,
-    buildBase    : <span class="string">'dist/'</span>,
-    sourceAssets : <span class="string">'src/bonnet'</span>,
-    buildAssets  : <span class="string">'dist/assets'</span>,
-    postsSource  : <span class="string">'src/content'</span>
-  };
-
-  require(<span class="string">'load-grunt-tasks'</span>)(grunt);
-
-  grunt.initConfig({
-    pkg: grunt.file.readJSON( <span class="string">'./package.json'</span> ),
-    paths : paths,
-    <span class="comment">// Start a local server</span>
-    connect: {
-      dev: {
-        options: {
-          port: <span class="number">8000</span>,
-          base: paths.buildBase,
-          keepalive: <span class="literal">true</span>
-        }
-      }
-    },
-    <span class="comment">// Lint JS files for coventions</span>
-    jscs: {
-      src : <span class="string">'&lt;%= paths.sourceAssets %&gt;/js/source/*.js'</span>,
-      options : {
-        config : <span class="string">'.jscsrc'</span>,
-        fix    : <span class="literal">true</span>
-      }
-    },
-    <span class="comment">// Lint JS files</span>
-    jshint: {
-      options: {
-        reporter: require(<span class="string">'jshint-stylish'</span>),
-        jshintrc : <span class="literal">true</span>,
-      },
-      src : [<span class="string">'&lt;%= paths.sourceAssets %&gt;/js/source/*.js'</span>]
-    },
-    <span class="comment">// Compiling javascript</span>
-    uglify: {
-      options: {
-        mangle: <span class="literal">false</span>,
-        sourceMapIncludeSources : <span class="literal">true</span>,
-        compress : {
-          dead_code : <span class="literal">true</span>,
-          drop_debugger : <span class="literal">true</span>,
-          unused : <span class="literal">true</span>,
-          join_vars : <span class="literal">true</span>,
-          warnings : <span class="literal">true</span>,
-          drop_console: <span class="literal">true</span>
-        }
-      },
-      my_target: {
-        files: {
-          <span class="string">'&lt;%= paths.buildAssets %&gt;/js/vendor.min.js'</span>: [<span class="string">'&lt;%= paths.sourceAssets %&gt;/js/vendor/jquery.js'</span>, <span class="string">'&lt;%= paths.sourceAssets %&gt;/js/vendor/*.js'</span>],
-          <span class="string">'&lt;%= paths.buildAssets %&gt;/js/source.min.js'</span>: [<span class="string">'&lt;%= paths.sourceAssets %&gt;/js/source/*.js'</span>]
-        }
-      }
-    },
-    <span class="comment">/* assemble templating */</span>
-    assemble: {
-      main : {
-        options: {
-          helpers   : <span class="string">'&lt;%= paths.sourceAssets %&gt;/helpers/**/*.js'</span>,
-          partials  : <span class="string">'&lt;%= paths.sourceAssets %&gt;/partials/**/*'</span>,
-          layoutdir : <span class="string">'&lt;%= paths.sourceAssets %&gt;/layouts'</span>,
-          data      : <span class="string">'&lt;%= paths.sourceAssets %&gt;/data/*.json'</span>,
-          expand    : <span class="literal">true</span>,
-          collections : [{
-            name : <span class="string">'writings'</span>,
-            inflection : <span class="string">'writing'</span>
-            }]
-        },
-        files: [{
-          cwd     : paths.postsSource,
-          dest    : paths.buildBase,
-          expand  : <span class="literal">true</span>,
-          src     : [<span class="string">'**/*.{md,hbs}'</span>]
-        }]
-      }
-    },
-    <span class="comment">// Lint SCSS files</span>
-    scsslint: {
-      allFiles: [<span class="string">'&lt;%= paths.sourceAssets %&gt;/sass/**/*.scss'</span>, <span class="string">'!&lt;%= paths.sourceAssets %&gt;/sass/vendor/**/*.scss'</span>],
-      options: {
-        config: <span class="string">'.scss-lint.yml'</span>,
-        reporterOutput: <span class="string">'scss-lint-report.xml'</span>,
-        colorizeOutput: <span class="literal">true</span>
-      },
-    },
-    <span class="comment">// SASS compiling</span>
-    sass: {
-      options: {
-        sourceMap: <span class="string">'inline'</span>,
-        style: <span class="string">'compressed'</span>
-      },
-      dist: {
-        files: {
-          <span class="string">'&lt;%= paths.buildAssets %&gt;/css/main.css'</span>: <span class="string">'&lt;%= paths.sourceAssets %&gt;/sass/main.scss'</span>
-        }
-      }
-    },
-    <span class="comment">// Purify CSS</span>
-    purifycss: {
-      options: {
-        minify: <span class="literal">false</span>,
-        info: <span class="literal">true</span>,
-        rejected: <span class="literal">true</span>
-      },
-      target: {
-        src: [<span class="string">'&lt;%= paths.buildBase %&gt;/**/*.html'</span>, <span class="string">'&lt;%= paths.buildAssets %&gt;/**/*.js'</span>],
-        css: [<span class="string">'&lt;%= paths.buildAssets %&gt;/css/**/main.css'</span>],
-        dest: <span class="string">'&lt;%= paths.buildAssets %&gt;/css/trimmed.css'</span>
-      },
-    },
-    <span class="comment">// CSS minification</span>
-    postcss: {
-      options: {
-        map: <span class="string">'inline'</span>, <span class="comment">// inline sourcemaps</span>
-        processors: [
-          require(<span class="string">'cssnano'</span>)({
-            autoprefixer : {
-            }
-          })
-        ]
-      },
-      dist: {
-        src: <span class="string">'&lt;%= paths.buildAssets %&gt;/css/trimmed.css'</span>
-      }
-    },
-    <span class="comment">// The ever epic watch statement</span>
-    watch: {
-      options: {
-        livereload: <span class="literal">true</span>,
-      },
-      js: {
-        files: <span class="string">'&lt;%= paths.sourceAssets %&gt;/js/**/*.js'</span>,
-        tasks: [<span class="string">'uglify'</span>],
-      },
-      css: {
-        files: <span class="string">'&lt;%= paths.sourceAssets %&gt;/sass/**/*.scss'</span>,
-        tasks: [<span class="string">'sass'</span>, <span class="string">'postcss'</span>],
-      },
-      posts : {
-        files : <span class="string">'&lt;%= paths.postsSource %&gt;/**/*.{md,hbs}'</span>,
-        tasks : [<span class="string">'assemble'</span>]
-      },
-      layout : {
-        files : <span class="string">'&lt;%= paths.sourceAssets %&gt;/**/*.hbs'</span>,
-        tasks : [<span class="string">'assemble'</span>]
-      },
-      images : {
-        files : <span class="string">'&lt;%= paths.sourceAssets %&gt;/images/**/*'</span>,
-        tasks : [<span class="string">'copy:images'</span>]
-      },
-      fonts : {
-        files : <span class="string">'&lt;%= paths.sourceAssets %&gt;/fonts/**/*'</span>,
-        tasks : [<span class="string">'copy:fonts'</span>]
-      },
-      grunt: {
-          files: [<span class="string">'Gruntfile.js'</span>]
-      }
-    },
-    responsive_images_converter: {
-      blog: {
-        options : {
-          queries: [{
-            name: <span class="string">'phone'</span>,
-            media: <span class="string">'(max-width:500px)'</span>,
-            <span class="comment">//device pixel ratio( 1 is default )</span>
-            dprs: [ <span class="number">1</span> ],
-            suffix: <span class="string">'@'</span>
-          },{
-            name: <span class="string">'tablet'</span>,
-            media: <span class="string">'(max-width:800px)'</span>,
-            <span class="comment">//device pixel ratio( 1 is default )</span>
-            dprs: [ <span class="number">1</span> ],
-            suffix: <span class="string">'@'</span>
-          },{
-            name: <span class="string">'desktop'</span>,
-            media: <span class="string">'(min-width:800px)'</span>,
-            <span class="comment">//device pixel ratio( 1 is default )</span>
-            dprs: [ <span class="number">1</span> ],
-            suffix: <span class="string">'@'</span>
-          },
-          {
-            name: <span class="string">'phone'</span>,
-            media: <span class="string">'(max-width:500px)'</span>,
-            <span class="comment">//device pixel ratio( 1 is default )</span>
-            dprs: [ <span class="number">2</span> ],
-            suffix: <span class="string">'@'</span>
-          },{
-            name: <span class="string">'tablet'</span>,
-            media: <span class="string">'(max-width:800px)'</span>,
-            <span class="comment">//device pixel ratio( 1 is default )</span>
-            dprs: [ <span class="number">2</span> ],
-            suffix: <span class="string">'@'</span>
-          },{
-            name: <span class="string">'desktop'</span>,
-            media: <span class="string">'(min-width:800px)'</span>,
-            <span class="comment">//device pixel ratio( 1 is default )</span>
-            dprs: [ <span class="number">2</span> ],
-            suffix: <span class="string">'@'</span>
-          }]
-        },
-        src: [ <span class="string">'&lt;%= paths.postsSource %&gt;/**/*.md'</span> ],
-      }
-    },
-    copy: {
-      images: {
-        files: [{
-            expand: <span class="literal">true</span>,
-            flatten: <span class="literal">true</span>,
-            src: [<span class="string">'&lt;%= paths.sourceAssets %&gt;/images/**/*.{jpeg,jpg,png,gif}'</span>],
-            dest: <span class="string">'&lt;%= paths.buildAssets %&gt;/images'</span>,
-            filter: <span class="string">'isFile'</span>
-          },
-        ]
-      },
-      fonts: {
-        files: [{
-            expand: <span class="literal">true</span>,
-            flatten: <span class="literal">true</span>,
-            src: [<span class="string">'&lt;%= paths.sourceAssets %&gt;/fonts/**/*'</span>],
-            dest: <span class="string">'&lt;%= paths.buildAssets %&gt;/fonts'</span>,
-            filter: <span class="string">'isFile'</span>
-          },
-        ]
-      }
-    },
-    <span class="comment">// Push the built files to the gh-pages branch</span>
-    <span class="string">'gh-pages'</span>: {
-      options: {
-        base: <span class="string">'dist'</span>,
-        branch: <span class="string">'gh-pages'</span>
-      },
-      src: [<span class="string">'**'</span>]
-    }
-  });
-
-  grunt.loadNpmTasks(<span class="string">'assemble'</span>);
-
-  <span class="comment">/* grunt tasks */</span>
-  grunt.registerTask(<span class="string">'default'</span>, [<span class="string">'assemble'</span>, <span class="string">'sass'</span>, <span class="string">'connect'</span> ]);
-
-  <span class="comment">// Build task</span>
-  grunt.registerTask(<span class="string">'build'</span>, [<span class="string">'assemble'</span>, <span class="string">'sass'</span>, <span class="string">'purifycss'</span>, <span class="string">'postcss'</span>, <span class="string">'gh-pages'</span> ]);
-
-};</code></pre>
-
+            
+                <div id="disqus_thread" class="disqus-container"></div>
+            
         </div>
-        
-        <div class="footer-container">
+    </div>
+
+    
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES * * */
+            var disqus_shortname = 'dennis-theme';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    
+
+    
+    <div class="footer-container">
 
 </div>
 
@@ -304,4 +74,3 @@ Like all Grunt projects, all you have to do to start working on is run npm insta
 </body>
 </html>
 
-    </div>

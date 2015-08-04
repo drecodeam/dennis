@@ -18,7 +18,7 @@ rehabilitated? well, now let me see. you know, i don't have any idea what that m
 
 ##the man likes to play chess; let's get him some rocks.
 
-![batman](/assets/images/batman.png)
+![batman](/hood/images/batman.png)
 
 But i guess you can't now, being dead and all. the man likes to play chess; let's get him some rocks. cities fall but they are rebuilt. heroes die but they are remembered. circumstances have taught me that a man's ethics are the only possessions he will take beyond the grave. the man likes to play chess; let's get him some rocks. well, what is it today? more spelunking?
 

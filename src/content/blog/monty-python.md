@@ -38,7 +38,7 @@ Knights of Ni, we are but simple travelers who seek the enchanter who lives beyo
 
 You don't vote for kings. …Are you suggesting that coconuts migrate? And the hat. She's a witch!
 
-![ Monty Python](/assets/images/monty-2.png)
+![ Monty Python](/hood/images/monty-2.png)
 
 …Are you suggesting that coconuts migrate? Why do you think that she is a witch? And the hat. She's a witch! Shut up! We shall say 'Ni' again to you, if you do not appease us.
 
@@ -55,7 +55,7 @@ Oh, ow! What a strange person. Well, she turned me into a newt. Bring her forwar
 She looks like one. No, no, no! Yes, yes. A bit. But she's got a wart. The nose?
 
 Listen. Strange women lying in ponds distributing swords is no basis for a system of government. Supreme executive power derives from a mandate from the masses, not from some farcical aquatic ceremony. Why do you think that she is a witch? A newt? …Are you suggesting that coconuts migrate? He hasn't got shit all over him.
-![ Monty Python](/assets/images/monty.jpg)
+![ Monty Python](/hood/images/monty.jpg)
 
 Now, look here, my good man. Well, she turned me into a newt. Bloody Peasant!
 

@@ -3,7 +3,7 @@ title: "thou shalt do the dance"
 writings: blog
 layout : article.hbs
 showNav: true
-date: Jan 29th
+date: 29-01-2015
 ---
 
 Cities fall but they are rebuilt. heroes die but they are remembered. mister wayne, if you don't want to tell me exactly what you're doing, when i'm asked, i don't have to lie. but don't think of me as an idiot.

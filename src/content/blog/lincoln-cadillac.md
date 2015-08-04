@@ -3,7 +3,7 @@ title: lincoln is better than a cadillac ?
 writings: blog
 layout : article.hbs
 showNav: true
-date: 12th April
+date: 12-04-2015
 ---
 
 

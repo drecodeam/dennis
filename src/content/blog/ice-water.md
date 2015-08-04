@@ -3,7 +3,7 @@ title: people in hell want ice water.
 writings: blog
 layout : article.hbs
 showNav: true
-date: Aug 1
+date: 01-08-2015
 ---
 
 

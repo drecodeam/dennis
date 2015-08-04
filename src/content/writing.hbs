@@ -18,7 +18,8 @@ showNav: true
                     <li class="post-list-item">
                         <a class="list-item-title" href="/{{relativeLink}}">{{ this.data.title }}</a>
                         <div class="list-item-date">
-                            {{this.data.date}}
+{{!--                             {{moment [date,"ddd, DD MMM YYYY HH:mm:ss ZZ"] format="MMMM YYYY"}}
+ --}}                            {{this.data.date}}
                         </div>
                     </li>
                 {{/withSort}}

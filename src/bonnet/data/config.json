@@ -1,5 +1,4 @@
 {
-    "websiteTitle" : "dennis", //ADD WEBSITE TITLE
-    "websiteDesc"  : "A simple theme based on Assemble static site generator", // ADD WEBSITE DESCRIPTION
-    "disqus"       : "dennis-theme" // ADD DISQUS SHORTCODE
+    "websiteTitle" : "dennis",
+    "websiteDesc"  : "A simple theme based on Assemble static site generator"
 }

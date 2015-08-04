@@ -65,15 +65,18 @@ module.exports = function (grunt) {
     assemble: {
       main : {
         options: {
-          helpers   : '<%= paths.sourceAssets %>/helpers/**/*.js',
+          helpers   : ['handlebars-helper-moment', '<%= paths.sourceAssets %>/helpers/**/*.js' ],
           partials  : '<%= paths.sourceAssets %>/partials/**/*',
           layoutdir : '<%= paths.sourceAssets %>/layouts',
           data      : '<%= paths.sourceAssets %>/data/*.json',
-          expand    : true,
+          plugins: ['assemble-contrib-permalinks'],
+          permalinks: {
+            preset: 'pretty'
+          },
           collections : [{
             name : 'writings',
             inflection : 'writing'
-            }]
+          }]
         },
         files: [{
           cwd     : paths.postsSource,

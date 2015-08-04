@@ -3,7 +3,7 @@ title: Dennis the Peasant
 writings: blog
 layout : article.hbs
 showNav: true
-date: 21st Feb
+date: 21-02-1990
 ---
 
 You don't vote for kings. On second thoughts, let's not go there. It is a silly place. What do you mean?

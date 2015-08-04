@@ -5,7 +5,7 @@ module.exports = function (grunt) {
     sourceBase   : 'src',
     buildBase    : 'dist/',
     sourceAssets : 'src/bonnet',
-    buildAssets  : 'dist/assets',
+    buildAssets  : 'dist/hood',
     postsSource  : 'src/content'
   };
 

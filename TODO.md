@@ -1,9 +1,9 @@
 ## DO IT NOW
-- Fix SASS structure
-- Add proper documentation
-- Create example posts
-- Add moment.js for date parsing
-- add permalink support
+- [x] Fix SASS structure
+- [ ] Add proper documentation
+- [ ] Create example posts
+- [ ] Add moment.js for date parsing
+- [ ] Add permalink support
 
 ## DO IT A BIT LATER THAN NOW
 - add disqus
@@ -29,4 +29,7 @@
 - add layout for image grid
 - add support for picturefill
 - support for responsive images
+    - https://github.com/andismith/grunt-responsive-images
+    - https://github.com/miller/grunt-responsive-images-converter
+
 - add performance benchmarks

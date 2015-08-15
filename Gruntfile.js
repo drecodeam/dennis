@@ -14,6 +14,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON( './package.json' ),
     paths : paths,
+
     // Start a local server
     connect: {
       dev: {
@@ -167,50 +168,42 @@ module.exports = function (grunt) {
           files: ['Gruntfile.js']
       }
     },
-    responsive_images_converter: {
-      blog: {
-        options : {
-          queries: [{
-            name: 'phone',
-            media: '(max-width:500px)',
-            //device pixel ratio( 1 is default )
-            dprs: [ 1 ],
-            suffix: '@'
-          },{
-            name: 'tablet',
-            media: '(max-width:800px)',
-            //device pixel ratio( 1 is default )
-            dprs: [ 1 ],
-            suffix: '@'
-          },{
-            name: 'desktop',
-            media: '(min-width:800px)',
-            //device pixel ratio( 1 is default )
-            dprs: [ 1 ],
-            suffix: '@'
-          },
-          {
-            name: 'phone',
-            media: '(max-width:500px)',
-            //device pixel ratio( 1 is default )
-            dprs: [ 2 ],
-            suffix: '@'
-          },{
-            name: 'tablet',
-            media: '(max-width:800px)',
-            //device pixel ratio( 1 is default )
-            dprs: [ 2 ],
-            suffix: '@'
-          },{
-            name: 'desktop',
-            media: '(min-width:800px)',
-            //device pixel ratio( 1 is default )
-            dprs: [ 2 ],
-            suffix: '@'
-          }]
-        },
-        src: [ '<%= paths.postsSource %>/**/*.md' ],
+    browserSync: {
+        dev: {
+            bsFiles: {
+                src : [
+                    '<%= paths.buildAssets %>/css/*.css',
+                    '<%= paths.buildBase %>/*.html'
+                ]
+            },
+            options: {
+                watchTask: true,
+                server: paths.buildBase
+            }
+        }
+    },
+    responsive_images_extender: {
+      target: {
+        options: {},
+        files: [{
+          expand: true,
+          src: ['**/*.{html,htm,php}'],
+          cwd: paths.buildBase,
+          dest: paths.buildBase
+        }]
       }
+    },
+    responsive_images: {
+      options: {
+        engine : 'gm',
+        newFilesOnly : true,
+      },
+      your_target: {
+        expand: true,
+        src: ['images/**.{jpg,gif,png}'],
+        cwd: '<%= paths.sourceAssets %>/',
+        dest: '<%= paths.buildAssets %>'
+      },
     },
     copy: {
       images: {
@@ -247,9 +240,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('assemble');
 
   /* grunt tasks */
-  grunt.registerTask('default', ['assemble', 'sass', 'connect' ]);
+  grunt.registerTask( 'dev', ['assemble', 'sass', 'postcss', 'copy', 'uglify','browserSync','watch' ] );
 
   // Build task
-  grunt.registerTask('build', ['assemble', 'sass', 'postcss', 'purifycss', 'gh-pages' ]);
+  grunt.registerTask( 'build', ['assemble', 'sass', 'postcss', 'purifycss', 'gh-pages' ] );
 
 };

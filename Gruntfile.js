@@ -227,6 +227,29 @@ module.exports = function (grunt) {
         ]
       }
     },
+    // PAGE SPEED INSIGHTS
+    pagespeed: {
+      options: {
+        nokey: true,
+        url: "http://localhost:3000",
+      },
+      prod: {
+        options: {
+          url: "https://developers.google.com/speed/docs/insights/v1/getting_started",
+          locale: "en_GB",
+          strategy: "desktop",
+          threshold: 80
+        }
+      },
+      paths: {
+        options: {
+          paths: ["/writing", "/examples", "/blog/monty-python/"],
+          locale: "en_GB",
+          strategy: "desktop",
+          threshold: 80
+        }
+      }
+    },
     // Push the built files to the gh-pages branch
     'gh-pages': {
       options: {
